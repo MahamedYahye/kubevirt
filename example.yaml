@@ -8,11 +8,13 @@ spec:
     namespace: kubevirt
   project: default
   source:
-    repoURL: 'https://github.com/MahamedYahye/kubevirt'
-    path: example.yaml  # Dit is het pad naar het YAML-bestand binnen je Git repository
+    repoURL: 'https://github.com/MahamedYahye/argocd-tutorial'
+    path: quickstart-demo/example.yaml  # Dit is het pad naar het YAML-bestand binnen je Git repository
     targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
   namespace: kubevirt
